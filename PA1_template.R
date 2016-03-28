@@ -1,12 +1,8 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: github_document
----
 
 ## Read the data from /repdata-data-activity/activity.csv
-
-
-```{r read_actvity_data}
+  
+  
+  ```{r read_actvity_data}
 activity <- read.csv("./repdata-data-activity/activity.csv", header = TRUE, colClass = c('integer', 'Date', 'integer'))
 ```
 

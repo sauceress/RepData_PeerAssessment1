@@ -13,6 +13,13 @@ What is mean total number of steps taken per day?
 
 ``` r
 attach(activity)
+```
+
+    ## The following objects are masked from activity (pos = 4):
+    ## 
+    ##     date, interval, steps
+
+``` r
 stepsbydate <- aggregate(steps ~ date, activity, na.rm=TRUE, sum)
 head(stepsbydate)
 ```
@@ -52,8 +59,8 @@ print(median_steps)
 
     ## [1] 10765
 
-What is the average daily activity pattern? (also creates a png)
-----------------------------------------------------------------
+What is the average daily activity pattern?
+-------------------------------------------
 
 ``` r
 stepsInterval <- aggregate(steps ~ interval, activity, mean)
@@ -64,11 +71,8 @@ plot(stepsInterval, type='l', main = "Average Daily Activity Pattern", col = "re
 
 ![](PA1_template_files/figure-markdown_github/avg_daily_pattern-1.png)<!-- -->
 
-On average across all the days in the dataset, the 5-minute interval contains
------------------------------------------------------------------------------
-
-the maximum number of steps?
-----------------------------
+On average across all the days in the dataset, the 5-minute interval contains the maximum number of steps?
+----------------------------------------------------------------------------------------------------------
 
 ``` r
 maxsteps <- stepsInterval$interval[which.max(stepsInterval$steps)]

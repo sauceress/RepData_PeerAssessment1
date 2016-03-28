@@ -37,7 +37,7 @@ median_steps <- median(stepsbydate$steps, na.rm = TRUE)
 print(median_steps)
 ```
 
-## What is the average daily activity pattern? (also creates a png)
+## What is the average daily activity pattern?
 ```{r avg_daily_pattern}
 
 
@@ -49,8 +49,7 @@ plot(stepsInterval, type='l', main = "Average Daily Activity Pattern", col = "re
 
 ```
 
-## On average across all the days in the dataset, the 5-minute interval contains
-## the maximum number of steps?
+## On average across all the days in the dataset, the 5-minute interval contains the maximum number of steps?
 ```{r maxsteps}
 maxsteps <- stepsInterval$interval[which.max(stepsInterval$steps)]
 
